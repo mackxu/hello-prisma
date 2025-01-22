@@ -19,9 +19,16 @@ Creates a tsconfig.json with the recommended settings in the working directory.
 prisma db seed 执行脚本, 插入初始数据到数据库。
 ```json
 {
-    "prisma": {
-        "seed": "ts-node prisma/seed.ts"
-    }
+  "name": "my-project",
+  "version": "1.0.0",
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.21",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  }
 }
 ```
 

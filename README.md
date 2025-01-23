@@ -79,6 +79,12 @@ TSX vs. TS-Node and Nodemon
 },
 ```
 参考：[https://www.npmjs.com/package/ts-node#node-flags-and-other-tools](https://www.npmjs.com/package/ts-node#node-flags-and-other-tools)
+
+## 给tsx添加自定义参数
+```bash
+npx tsx ./src/index.ts --func find
+```
+
 ## nodejs获取自定义参数 parseArgs
 ```ts
 import { parseArgs } from 'node:util';

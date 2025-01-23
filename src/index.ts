@@ -96,6 +96,4 @@ const options = {
 const { values } = parseArgs({ options });
 console.dir(values.func, { depth: null });
 
-console.log('process.argv', process.argv);
-
 functions[values.func]?.();

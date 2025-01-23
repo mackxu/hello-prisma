@@ -1,4 +1,6 @@
 import { PrismaClient } from '@prisma/client';
+import { parseArgs } from 'node:util';
+
 
 const prisma = new PrismaClient({
   log: [
@@ -53,7 +55,7 @@ async function findAll() {
 
 // findAll()
 
-async function find(params) {
+async function find() {
   const allUser = await prisma.user.findUnique(
     { 
       select: { name: true, prifile: true, posts: true },
@@ -80,4 +82,20 @@ async function findFirst() {
   console.dir(user)
 }
 
-findFirst();
+// findFirst();
+
+const functions: Record<string, Function> = {
+  find,
+  findFirst,
+}
+
+const options = {
+  func: { type: 'string' as const, default: 'aaa' }
+}
+
+const { values } = parseArgs({ options });
+console.dir(values.func, { depth: null });
+
+console.log('process.argv', process.argv);
+
+functions[values.func]?.();

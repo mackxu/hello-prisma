@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_OPTIONS='-r ts-node/register --no-warnings' node ./src/index.ts"
   },
   "keywords": [],
   "author": "xuyadong",
@@ -17,6 +17,7 @@
     "typescript": "^5.7.3"
   },
   "devDependencies": {
-    "@types/node": "^22.10.7"
+    "@types/node": "^22.10.7",
+    "ts-node": "^10.9.2"
   }
 }
